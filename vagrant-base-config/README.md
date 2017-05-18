@@ -7,7 +7,7 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
 
 ## Downlaod & Install
 
-[Vagrant Getting started](https://www.vagrantup.com/docs/getting-started/provisioning.html)
+[Vagrant](https://www.vagrantup.com/downloads.html)
 [Oracle Virtualbox](https://www.virtualbox.org/wiki/Downloads)
 
 
@@ -159,6 +159,8 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
         service nginx restart > /dev/null
 
 ### Help / Feedback
+
+[Vagrant Getting started](https://www.vagrantup.com/docs/getting-started/provisioning.html)
 
 [abeym](https://github.com/abeym)
 
