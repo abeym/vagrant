@@ -50,7 +50,7 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
 
   Specifying the base box
 
-        config.vm.box = "primalskill/ubuntu-trusty64"
+        config.vm.box = "ubuntu/trusty64"
 
   Network configurations
 
