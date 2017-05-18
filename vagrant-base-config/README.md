@@ -165,6 +165,7 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
 
 [abeym](https://github.com/abeym)
 
+<a target="_blank" href="mailto:abey_mail@yahoo.com?Subject=vagrant-base-config&body=About%20vagrant-base-config">Email</a>
 
 [[EMail|mailto:abey_mail@yahoo.com?Subject=vagrant-base-config&body=About%20vagrant-base-config]]
 
