@@ -157,11 +157,11 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
         ln -s /etc/nginx/sites-available/nginx_vhost /etc/nginx/sites-enabled/
         rm -rf /etc/nginx/sites-available/default
         service nginx restart > /dev/null
-        
+
 ### Help / Feedback
 
-    [abeym](https://github.com/abeym)
-    [mailto:abey_mail@yahoo.com?Subject=vagrant-base-config&body=About%20vagrant-base-config MailMe]
+[abeym](https://github.com/abeym)
+[mailto:abey_mail@yahoo.com?Subject=vagrant-base-config&body=About%20vagrant-base-config MailMe]
 
 
 
