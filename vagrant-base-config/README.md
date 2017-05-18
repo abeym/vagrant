@@ -1,4 +1,4 @@
-# vagrant base-config
+# vagrant base config
 
 ### Purpose
 
@@ -165,13 +165,14 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
 
 [abeym](https://github.com/abeym)
 
-[mailto:abey_mail@yahoo.com?Subject=vagrant-base-config&body=About%20vagrant-base-config MailMe]
+
+[[EMail|mailto:abey_mail@yahoo.com?Subject=vagrant-base-config&body=About%20vagrant-base-config]]
 
 
 
 ### Version
 
-    ver1.0
+    1.0
 
 
 # Wiki Ref
