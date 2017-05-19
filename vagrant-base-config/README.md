@@ -168,11 +168,11 @@ Insert the following lines into setup.sh to copy this configuration to the Nginx
 <a target="_blank" href="mailto:abey_mail@yahoo.com?Subject=vagrant-base-config&body=About%20vagrant-base-config">Send an Email</a>
 
 
-### Version
+#### Version
 
     1.0
 
 
-# Wiki Ref
+#### Wiki Ref
 1. [Markdown-Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 2. [mastering-markdown](https://guides.github.com/features/mastering-markdown/)
