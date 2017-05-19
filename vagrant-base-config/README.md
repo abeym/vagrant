@@ -36,7 +36,7 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
 
 #### Vagrantfile
 
-    The primary configuration location for any Vagrant development environment is a file called Vagrantfile which you need to place in your project’s folder. The configuration syntax of this Vagrantfile is Ruby. Every configuration option you will need you can place inside this file.
+  The primary configuration location for any Vagrant development environment is a file called Vagrantfile which you need to place in your project’s folder. The configuration syntax of this Vagrantfile is Ruby. Every configuration option you will need you can place inside this file.
 
   About provisioning
 
