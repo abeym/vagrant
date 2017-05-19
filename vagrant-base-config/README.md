@@ -38,55 +38,55 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
 
   The primary configuration location for any Vagrant development environment is a file called Vagrantfile which you need to place in your project’s folder. The configuration syntax of this Vagrantfile is Ruby. Every configuration option you will need you can place inside this file.
 
-  About provisioning
+#####  About provisioning
 
-    Provisioning is used to call additional install scripts. It can be either inline or use a sh sript. E.g.
-    Vagrant offers multiple options ranging from basic shell scripts to software automation managers such as Puppet, Chef or Ansible. You can even configure it to use multiple provisioners at the same time.
+Provisioning is used to call additional install scripts. It can be either inline or use a sh sript. E.g.
+Vagrant offers multiple options ranging from basic shell scripts to software automation managers such as Puppet, Chef or Ansible. You can even configure it to use multiple provisioners at the same time.
 
-  Vagrant API version
+#####  Vagrant API version
 
         Vagrant.configure("2") do |config|
         end
 
-  Specifying the base box
+#####  Specifying the base box
 
         config.vm.box = "ubuntu/trusty64"
 
-  Network configurations
+#####  Network configurations
 
-    to set up port forwarding for now. Insert the following line into your configuration file:
+to set up port forwarding for now. Insert the following line into your configuration file:
 
         config.vm.network :forwarded_port, guest: 80, host: 8931, auto_correct: true
 
-  Syncing project files
+#####  Syncing project files
 
-    A good practice to follow when you’re using a Vagrant development environment, or as a matter of fact any virtualized development environment, is to share your project files between the host and the guest operating systems, so that your project files are not copied into the virtual machine, because if you delete your VM, the files will be lost with it.
+A good practice to follow when you’re using a Vagrant development environment, or as a matter of fact any virtualized development environment, is to share your project files between the host and the guest operating systems, so that your project files are not copied into the virtual machine, because if you delete your VM, the files will be lost with it.
 
-    Sharing folders between the host and the guest operating systems is very easy to do with Vagrant. Just enter the following config into the Vagrantfile:
+Sharing folders between the host and the guest operating systems is very easy to do with Vagrant. Just enter the following config into the Vagrantfile:
 
         config.vm.synced_folder "./", "/var/www", create: true, group: "www-data", owner: "www-data"
 
 
-  VirtualBox specific configurations
+#####  VirtualBox specific configurations
 
-    Now that we configured the network and synced folders, we should configure the virtual machine itself. Vagrant lets you dynamically modify the VM – you can change the name, memory, etc.
+Now that we configured the network and synced folders, we should configure the virtual machine itself. Vagrant lets you dynamically modify the VM – you can change the name, memory, etc.
 
         config.vm.provider "virtualbox" do |v|
             v.name = "SitePoint Test Vagrant"
             v.customize ["modifyvm", :id, "--memory", "1024"]
         end
 
-  Shell script provisioning
+#####  Shell script provisioning
 
-    The easiest way to provision a base box is to use basic shell script commands which then run inside the virtual machine. We need to define the provisioning type, which in our case is called shell. Lets crate a file provision/setup.sh file. Let’s write this block inside the configuration file:
+The easiest way to provision a base box is to use basic shell script commands which then run inside the virtual machine. We need to define the provisioning type, which in our case is called shell. Lets crate a file provision/setup.sh file. Let’s write this block inside the configuration file:
 
         config.vm.provision "shell" do |s|
             s.path "provision/setup.sh"
         end
 
-  Installing Base Packages
+#####  Installing Base Packages
 
-    Let the fun begin! Let’s install the base packages, namely: Git, Nginx, PHP-FPM and MySQL. In the provision/setup.sh file append the following lines:
+Let the fun begin! Let’s install the base packages, namely: Git, Nginx, PHP-FPM and MySQL. In the provision/setup.sh file append the following lines:
 
         echo "Installing Git"
             apt-get install git -y > /dev/null
@@ -95,7 +95,7 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
             apt-get install nginx -y > /dev/null
 
 
-  Installing PHP
+##### Installing PHP
 
         echo "Updating PHP repository"
           apt-get install python-software-properties build-essential -y > /dev/null
@@ -110,7 +110,7 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
           apt-get install curl php5-curl php5-gd php5-mcrypt php5-mysql -y > /dev/null
 
 
-  Installing MySQL
+#####  Installing MySQL
 
         apt-get install debconf-utils -y > /dev/null
 
@@ -120,11 +120,11 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
         apt-get install mysql-server -y > /dev/null
 
 
-  Configuring Nginx settings
+#####  Configuring Nginx settings
 
-    Let’s create a file called nginx_vhost (no file extension) in our provision folder inside another folder called config. I.e. the path to the file will be provision/config/nginx_vhost.
+Let’s create a file called nginx_vhost (no file extension) in our provision folder inside another folder called config. I.e. the path to the file will be provision/config/nginx_vhost.
 
-    The file will contain an Nginx basic virtual host configuration:
+The file will contain an Nginx basic virtual host configuration:
 
         server {
                 listen 80;
@@ -151,7 +151,7 @@ Local host machine may be Windows, OSX, Linux distro or another OS which is supp
                 }
             }
 
-    Insert the following lines into setup.sh to copy this configuration to the Nginx folder:
+Insert the following lines into setup.sh to copy this configuration to the Nginx folder:
 
         echo "Configuring Nginx"
         cp /var/www/provision/config/nginx_vhost /etc/nginx/sites-available/nginx_vhost > /dev/null
